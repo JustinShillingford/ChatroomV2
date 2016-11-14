@@ -69,7 +69,7 @@ router.post('/messages', function(req, res, next) {
 * Now, open PostMan.  It is a google chrome extension. You can add it to chrome here : https://www.getpostman.com/
 I have never used the mac app before, but if you really don't like chrome, you can try it. 
 
-* Here is a collection of test requests for this project : https://www.getpostman.com/collections/b5a98a07012a2fcd08e1
+* Here is a collection of test requests for this project : https://www.getpostman.com/collections/b45a697d1c0a99433b51
 
 * Go into the "Post Messages" tabl on the left side. In the "body" section, edit the body to be whatever you want. It should still include a sender and a message.  
 
