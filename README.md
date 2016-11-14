@@ -43,6 +43,10 @@ admin.initializeApp({
 ```
 * Now, change the `path/to/serviceAccountKey.json`  to `./database_key.json`
 
+* Finally, add one more line of code that tells the server we are using the Database part of Firebase.  Right under the section of code you just added, add 
+```js
+var db = admin.database();
+```
 * Let's test the database connection! In this step, you are also going to learn how to use PostMan, a tool for sending test HTTP requests.  In the index.js file, write the following code : 
 
 ```js
