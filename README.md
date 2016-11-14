@@ -5,6 +5,12 @@ NodeJS api written to teach CUAppDev training program about interacting with API
  *  Install NodeJS from : https://nodejs.org/en/download/
  * Start a terminal window and type the following commands : 
 ```sh
+$ sudo npm install -g express
+$ sudo npm install -g express-generator
+```
+Note that these two commands may require you to type in your mac password.  As you type your password, it WILL NOT appear on the screen.  BUt fear not, if you type it and hit ENTER, it will work. 
+
+```js
 $ cd ~
 $ express Chatroom
 $ cd Chatroom
