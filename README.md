@@ -80,7 +80,7 @@ I have never used the mac app before, but if you really don't like chrome, you c
 ```js
 router.get('/messages/', function (req, res, next){
   db.ref('/messages').once('value').then(function(data) {
-    res.status(200).json({messages : snapshot.val()})
+    res.status(200).json({messages : data.val()})
   });
 });
 ```
