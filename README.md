@@ -76,3 +76,12 @@ router.get('/messages/', function (req, res, next){
 ```
 * Restart the server by typing Ctrl^C in the terminal and running ` $ npm start` again.  You have to do this every time you change any code. 
 * Now, you should be able to run the test GET request from postman.  
+
+* NOW, we can go one stop further : open up this collection of postman tests. Instead of All of these requests sending to your guys' Firebase projects, they are all directed at my server.  You can actually simulate a chatroom this way! 
+
+* Obviously, we don't want to ONLY interact with our server via Postman.  However, next week you are going to learn how to connect to 3rd party libraries from the iOS side of things. 
+
+* But even this really simple app has a lot of potential for added features -- we could add "groups" that users belong to (similar to groupme) pretty easily or add login functionality to keep the system secure.  We can do all of this JUST with firebase and a few more sections of data. 
+
+* But it doesnt stop there -- Firebase has some pretty crazy realtime functionality built in. If you want to explore them, there are a ton of great tutorials on how to get started. 
+
