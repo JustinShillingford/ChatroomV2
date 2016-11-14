@@ -36,3 +36,43 @@ admin.initializeApp({
 });
 ```
 * Now, change the `path/to/serviceAccountKey.json`  to `./database_key.json`
+
+* Let's test the database connection! In this step, you are also going to learn how to use PostMan, a tool for sending test HTTP requests.  In the index.js file, write the following code : 
+
+```js
+router.post('/messages', function(req, res, next) {
+  db.ref().child('/messages').push({
+    sender : req.body.sender,
+    created_at : Date.now(),
+    content : req.body.content
+  }, function () {
+    res.status(200).json({message : "success"});
+  });
+});
+```
+* Save the file and. From your terminal window again, run ` $npm start` you should see this in your terminal: 
+```
+> Chatroom@0.0.0 start /Users/administrator/CUAppDev/ChatroomV2
+> node ./bin/www
+```
+
+* Now, open PostMan.  It is a google chrome extension. You can add it to chrome here : https://www.getpostman.com/
+I have never used the mac app before, but if you really don't like chrome, you can try it. 
+
+* Here is a collection of test requests for this project : https://www.getpostman.com/collections/b5a98a07012a2fcd08e1
+
+* Go into the "Post Messages" tabl on the left side. In the "body" section, edit the body to be whatever you want. It should still include a sender and a message.  
+
+* Click "Send."  You should see a "success" message pop up in Postman.  It may take a second or two. Then, if you go to your Firebase Database console, you should see the messageyou just posted! 
+
+* Now, go back to the index.js file.  Now that we can write data to the database, you want to be able to Read data.  Add the following code to index.js 
+
+```js
+router.get('/messages/', function (req, res, next){
+  db.ref('/messages').once('value').then(function(data) {
+    res.status(200).json({messages : snapshot.val()})
+  });
+});
+```
+* Restart the server by typing Ctrl^C in the terminal and running ` $ npm start` again.  You have to do this every time you change any code. 
+* Now, you should be able to run the test GET request from postman.  
